@@ -14,7 +14,7 @@ class Post(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="news_post")
     updated_on = models.DateTimeField(auto_now=True)
     content = models.TextField()
-    featured_image = CloudinaryField('image', default='placeholder')
+    featured_image = CloudinaryField('image', default='news_image')
     excerpt = models.TextField(blank=True)
     date_published = models.DateTimeField(auto_now_add=True)
     likes = models.ManyToManyField(User, related_name='news_likes', blank=True)
