@@ -34,7 +34,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['fashionews.herokuapp.com', 'localhost']
 
-ALLOWED_HOSTS = []
 
 
 # Application definition
