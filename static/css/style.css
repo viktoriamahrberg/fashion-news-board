@@ -1,0 +1,82 @@
+/* General */
+hr {
+    color: #B87869
+}
+body {
+    font-family: 'Alatsi', sans-serif;
+
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+li {
+    color: #fff; 
+}
+
+i {
+    color: #fff;
+    font-size: 30px;
+}
+
+a:hover {
+    color: #B87869;
+}
+
+i:hover {
+    color: #B87869;
+}
+
+/* Button */
+
+.btn-outline-success {
+    color: #B87869;
+    border-color: #B87869;
+}
+.btn-outline-success:hover {
+    background-color: #B87869;
+    border-color: #B87869;
+    color: #fff;
+}
+
+/* Header */
+
+.nav-link {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #fff;
+}
+
+.nav-link:hover {
+    color: #B87869;
+}
+
+.navbar-brand {
+    text-decoration: none;
+    text-transform: capitalize;
+}
+
+.logo {
+    font-family: 'Syncopate', sans-serif;
+    font-weight: 700;
+    font-size: 40px;
+    color: #fff; 
+}
+
+.half-logo {
+    font-family: 'Alatsi', sans-serif;
+    font-size: 40px;
+    color: #fff;
+    letter-spacing: 5px;
+}
+
+/* Footer */
+
+footer {
+    color: #B87869;
+}
+
+
+
