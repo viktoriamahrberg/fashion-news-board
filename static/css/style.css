@@ -5,7 +5,6 @@ hr {
 body {
     font-family: 'Alatsi', sans-serif;
     color: #191919;
-
 }
 
 a {
@@ -32,6 +31,9 @@ i:active {
     color: #B87869;
 }
 
+.commenter {
+    color: #B87869;
+}
 /* Button */
 
 .btn-outline-success {
