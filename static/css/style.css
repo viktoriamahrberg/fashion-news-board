@@ -4,12 +4,13 @@ hr {
 }
 body {
     font-family: 'Alatsi', sans-serif;
+    color: #191919;
 
 }
 
 a {
     text-decoration: none;
-    color: #000;
+    color: #191919;
 }
 
 li {
@@ -21,11 +22,13 @@ i {
     font-size: 30px;
 }
 
-a:hover {
+a:hover,
+a:active {
     color: #B87869;
 }
 
-i:hover {
+i:hover,
+i:active {
     color: #B87869;
 }
 
@@ -49,7 +52,9 @@ i:hover {
     color: #fff;
 }
 
-.nav-link:hover {
+.nav-link:hover,
+.nav-link:active,
+.nav-link:focus {
     color: #B87869;
 }
 

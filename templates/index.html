@@ -14,12 +14,12 @@
                 <div class="card">
                     <img src=" {{ post.featured_image.url }}" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <a href="#" class="post-link">
+                        <a href="{% url 'post_detail' post.slug%}" class="post-link">
                         <h5 class="card-title">{{ post.title }}</h5>
                         <p class="card-text">{{ post.excerpt }}</p>
                     </a>
                     <hr />
-                    
+                    <p class="card-text"><small class="text-muted"> {{  post.date_published }}</small></p>
                     </div>
                 </div>
                 {% if forloop.counter|divisibleby:2 %}
@@ -46,5 +46,6 @@
     </nav>
     {% endif %}
 </div>
+
 
 {% endblock %}

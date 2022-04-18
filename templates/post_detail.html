@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<article class="container">
+    <div class="col-md-10 mb-4 mt-4 mx-auto">
+        <div class="row">
+            <!-- <div class="col-md-8 justify-content-center"> -->
+            <img src="{{ post.featured_image.url }}">
+
+            <h1 class="post-title">{{ post.title }}</h1>
+            <p class="card-text"><small class="text-muted"> {{  post.date_published }}</small></p>
+            <hr />
+            <p class="post-content">
+                {{ post.content | safe }}
+            </p>
+
+        </div>
+    </div>
+</article>
+<div class="container">
+    <div class="col-md-10 mb-4 mt-4 mx-auto">
+        <div class="row">
+            <h4 class="comment-title">Comments:</h4>
+    {% with comments.count as total_comments %}
+    <strong class="text-secondary"><i class="far fa-comments"></i>
+        <!-- Our total_comments variable goes before the closing strong tag -->
+        {{ total_comments }}</strong>
+    {% endwith %}
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+
+    {% endblock content %}
