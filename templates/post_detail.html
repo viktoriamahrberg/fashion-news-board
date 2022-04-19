@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
 
+{% load crispy_forms_tags %}
 <article class="container">
     <div class="col-md-10 mb-4 mt-4 mx-auto">
         <div class="row">
@@ -19,18 +20,41 @@
 </article>
 <hr />
 <div class="container">
-    <div class="col-md-10 mb-4 mt-4 mx-auto">
-        <div class="row">
-            {% for comment in comments %}
+    <div class="row">
+        <div class="col-md-7 mb-4 mt-4">
+
+           
             <h4 class="comment-title mb-4">Comments:</h4>
+            {% for comment in comments %}
             <div class="comments" style="width: 18rem;">
                 <div class="comment-body">
                     <h5 class="commenter">{{ comment.name }}</h5>
-                    <h6 class="comment-date"><small class="text-muted">{{ comment.date_published }}</small></h6>
+                    <h6 class="comment-date">{{ comment.date_published }}</h6>
                     <p class="comment-content">{{ comment.body }}</p>
+                    <hr />
                 </div>
             </div>
             {% endfor %}
+        </div>
+        <div class="col-md-5 mb-4 mt-4">
+            {% if commented %}
+            <div class="alert alert-success" role="alert">
+                Your comment has been published
+            </div>
+            {% else %}
+            {% if user.is_authenticated %}
+            <h4 class="leave-comment-title mb-4">Leave a comment:</h4>
+            <form method="post" style="margin-top: 1.2em;">
+                {{ comment_form | crispy }}
+                {% csrf_token %}
+                <div class="col-md-6 mb-4 mt-4">  
+                    <p class="commenter">Commenting as: {{ user.username }}</p>
+                <button class="btn btn-outline-success" type="submit">Submit</button>
+                </div>
+            </form>
+
+            {% endif %}
+            {% endif %}
         </div>
     </div>
 </div>

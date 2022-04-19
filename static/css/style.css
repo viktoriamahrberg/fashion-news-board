@@ -31,9 +31,13 @@ i:active {
     color: #B87869;
 }
 
-.commenter {
+.commenter,
+.comment-date {
     color: #B87869;
+    font-size: small;
 }
+
+
 /* Button */
 
 .btn-outline-success {
@@ -81,6 +85,14 @@ i:active {
     font-size: 40px;
     color: #fff;
     letter-spacing: 5px;
+}
+
+/* Form */
+textarea {
+    font-family: oxygenregular, sans-serif;
+}
+.comment-content {
+    font-family: oxygenregular, sans-serif;
 }
 
 /* Footer */
