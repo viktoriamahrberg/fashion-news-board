@@ -1,5 +1,124 @@
 ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
+
+Live link [here](https://fashionews.herokuapp.com/)
+
+# About
+
+
+
+
+## UX
+
+### Structure of the website
+
+### Databases
+
+
+### Wireframes
+
+### Website owner business goals
+Fashionews target audience is 
+
+
+### User goals
+
+#### User Stories
+- As a Site user I want to make posts so that I can share fashion news around me with the community.
+- As a Site user I want to see all available news on the frontpage so that I can click decide on what I want to read more about.
+- As a Site user I want to click on a news-post so that I can read the full news article.
+- As a Site user I want to see a link to the original post so that I can see that the news is legit.
+- As a Site user I want to to see when the news-post was posted so that I know when the news was from.
+- As a Site user I want to search for a news-post so that I easily can navigate to a specific post.
+- As a Site user I want to register an account so that I can create a news-post, comment and interact with other posts.
+- As a Site user I want to receive flash messages after my actions so that I know if I successfully have processed my action.
+- As a Site user I want to add photos as well as text to my posts in a userfriendly way so that I can make the posts more appealing with the images.
+- As a Site admin I want to delete inappropriate users or users who spread fake news so that I keep the site legit and trustworthy.
+- As a Site user I want to choose what to read from a category list so that I can read that of what is in my interest.
+- As a Site user I want to share a post on social media so that I can interact with and spread the articles I find interesting.
+- As a Site user I want to login or register account with my Facebook or Google account so that I can speed up the login/register process.
+
+### Surface
+
+
+## Features
+
+### Navigation bar
+
+### Footer
+
+### Future implementations
+
+
+## Technologies used
+
+
+**Django** - The framwork the app is built on
+
+**Bootstrap** - CSS library
+
+**Claudinary** - To store static files and images
+
+**Crispyforms** - To display forms
+
+**Python** - To write functions and models
+
+**Javascript** - To add some functionality to the html-page
+
+**Github** - To store repo and plan the project
+
+**Gitpod** - Development hosting platform
+
+**Google Developer Tools** - For debugging and check responsiveness
+
+**PostgreSQL** - Database
+
+**Heroku**- As a development hosting platform
+
+**Google Fonts** - As a font resource.
+
+
+
+
+
+
+## Testing
+
+### Functionality testing
+
+### Compatibility testing
+
+### User stories testing
+
+### Issues found during site development
+
+### Performance testing
+
+I run Lighthouse tool to check performance of the website. 
+
+
+### Code Validation
+
+W3C CSS Validator to validate CSS
+Html Checker to test HTML
+
+## Deployment
+
+The site was deployment in Heroku and followed instructions by Code Institutes - [Deployment Cheat Sheet](https://codeinstitute.s3.amazonaws.com/fst/Django%20Blog%20Cheat%20Sheet%20v1.pdf)
+
+Heroku steps (after created account or logged in):
+1. "Create new App"
+2. Give the App a unique name and enter region
+3. Click on "Create App"
+4. Click on "Settings" on your new App Dashboard
+5. Scroll down to Config Vars and add values and keys
+6. Go to Deploy section tab and scroll down to Deployment Method. I connected to my Github pages and could thereafter linked to the Github repo.
+7. Scroll down to Automatic and Manual Deploys sections. I clicked on Automatic Deployment so that my changes that I push to Github automatically updates in Heroku.
+8. Then in the Manual Deploy section, press Deploy Branch
+9. After project has been deployed successfully I clicked the View-button to see the program run in the terminal.
+
+
+
 Welcome Vikmah,
 
 This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
