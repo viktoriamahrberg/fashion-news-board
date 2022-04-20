@@ -18,7 +18,6 @@ class Post(models.Model):
     excerpt = models.TextField(blank=True)
     date_published = models.DateTimeField(auto_now_add=True)
     original_news_link = models.URLField(blank=False)
-    # likes = models.ManyToManyField(User, related_name='news_likes', blank=True)
 
     class Meta:
         ordering = ['date_published']
