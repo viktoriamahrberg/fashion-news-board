@@ -1,35 +1,42 @@
 {% extends "base.html" %}
 
 {% block content %}
+<div class="col-md-8 mt-4 offset-md-2 text-center">
+    <h2 class="tagline">Share your local fashion news with the world</h2>
+</div>
 
 <div class="container-fluid">
     <div class="row">
-
-        <!-- Blog Entries Column -->
-        <!-- <div class="row justify-content-evenly">
-            <div class="col-4"> -->
-        <div class="row row-cols-1 row-cols-md-2 g-4">
-            <div class="col">
+        <div class="col-12 mt-3 left">
+            <div class="row">
                 {% for post in post_list %}
-                <div class="card">
-                    <img src=" {{ post.featured_image.url }}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <a href="{% url 'post_detail' post.slug%}" class="post-link">
-                        <h5 class="card-title">{{ post.title }}</h5>
-                        <p class="card-text">{{ post.excerpt }}</p>
-                    </a>
-                    <hr />
-                    <p class="card-text"><small class="text-muted"> {{  post.date_published }}</small></p>
+
+                <div class="col-md-6">
+
+                    <div class="card mb-6">
+                        <div class="card-body">
+                            <div class="image-container">
+                                {% if "news_image" in post.featured_image.url %}
+                                <img class="card-img-top" src="../static/images/default_image.jpg">
+                                {% else %}
+                                <img class="card-img-top" src=" {{ post.featured_image.url }}">
+                                {% endif %}
+                            </div>
+                            <a href="{% url 'post_detail' post.slug%}" class="post-link">
+                                <h5 class="card-title">{{ post.title }}</h5>
+                                <p class="card-text">{{ post.excerpt }}</p>
+                            </a>
+                            <hr />
+                            <p class="card-text"><small class="text-muted"> {{  post.date_published }}</small></p>
+                        </div>
                     </div>
                 </div>
                 {% if forloop.counter|divisibleby:2 %}
+                <div class="row">
+                    {% endif %}
+                    {% endfor %}
+                </div>
             </div>
-            <div class="row">
-
-                {% endif %}
-                {% endfor %}
-            </div>
-            
         </div>
     </div>
     {% if is_paginated %}

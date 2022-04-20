@@ -6,13 +6,21 @@
     <div class="col-md-10 mb-4 mt-4 mx-auto">
         <div class="row">
             <!-- <div class="col-md-8 justify-content-center"> -->
+                {% if "news_image" in post.featured_image.url %}
+                <img src="../static/images/default_image.jpg" with="100%">
+                {% else %}
             <img src="{{ post.featured_image.url }}">
+            {% endif %}
 
             <h1 class="post-title">{{ post.title }}</h1>
             <p class="card-text"><small class="text-muted"> {{  post.date_published }}</small></p>
             <hr />
             <p class="post-content">
                 {{ post.content | safe }}
+            </p>
+            <p class="post-link">Find the original news link here:
+                <br>
+                {{ post.original_news_link }}
             </p>
 
         </div>
@@ -23,7 +31,7 @@
     <div class="row">
         <div class="col-md-7 mb-4 mt-4">
 
-           
+
             <h4 class="comment-title mb-4">Comments:</h4>
             {% for comment in comments %}
             <div class="comments" style="width: 18rem;">
@@ -38,18 +46,30 @@
         </div>
         <div class="col-md-5 mb-4 mt-4">
             {% if commented %}
-            <div class="alert alert-success" role="alert">
+            <div class="alert alert-success" id="success-msg" role="alert">
                 Your comment has been published
             </div>
+            {% if user.is_authenticated %}
+            <h4 class="leave-comment-title mb-4">Leave a comment:</h4>
+            <form method="post" style="margin-top: 1.2em;">
+                {{ comment_form | crispy }}
+                {% csrf_token %}
+                <div class="col-md-6 mb-4 mt-4">
+                    <p class="commenter">Commenting as: {{ user.username }}</p>
+                    <button class="btn btn-outline-success" type="submit">Submit</button>
+                </div>
+            </form>
+
+            {% endif %}
             {% else %}
             {% if user.is_authenticated %}
             <h4 class="leave-comment-title mb-4">Leave a comment:</h4>
             <form method="post" style="margin-top: 1.2em;">
                 {{ comment_form | crispy }}
                 {% csrf_token %}
-                <div class="col-md-6 mb-4 mt-4">  
+                <div class="col-md-6 mb-4 mt-4">
                     <p class="commenter">Commenting as: {{ user.username }}</p>
-                <button class="btn btn-outline-success" type="submit">Submit</button>
+                    <button class="btn btn-outline-success" type="submit">Submit</button>
                 </div>
             </form>
 
@@ -58,6 +78,12 @@
         </div>
     </div>
 </div>
-
+<script>
+    setTimeout(function () {
+        let messages = document.getElementById("success-msg");
+        let alert = new bootstrap.Alert(messages);
+        alert.close();
+    }, 3000);
+</script>
 
 {% endblock content %}

@@ -17,7 +17,8 @@ class Post(models.Model):
     featured_image = CloudinaryField('image', default='news_image')
     excerpt = models.TextField(blank=True)
     date_published = models.DateTimeField(auto_now_add=True)
-    likes = models.ManyToManyField(User, related_name='news_likes', blank=True)
+    original_news_link = models.URLField(blank=False)
+    # likes = models.ManyToManyField(User, related_name='news_likes', blank=True)
 
     class Meta:
         ordering = ['date_published']
@@ -25,8 +26,8 @@ class Post(models.Model):
     def __str__(self):
         return self.title
 
-    def number_of_likes(self):
-        return self.likes.count()
+    # def number_of_likes(self):
+    #     return self.likes.count()
 
 
 class Comment(models.Model):
