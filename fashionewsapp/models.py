@@ -2,7 +2,6 @@ from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 
-STATUS = ((0, "Draft"), (1, "Published"))
 
 
 class Post(models.Model):
@@ -17,7 +16,7 @@ class Post(models.Model):
     featured_image = CloudinaryField('image', default='news_image')
     excerpt = models.TextField(blank=True)
     date_published = models.DateTimeField(auto_now_add=True)
-    original_news_link = models.URLField(blank=False)
+    original_news_link = models.URLField(blank=False, null=False)
 
     class Meta:
         ordering = ['date_published']
@@ -25,16 +24,6 @@ class Post(models.Model):
     def __str__(self):
         return self.title
 
-    def get_cat_list(self):
-        k = self.category # for now ignore this instance method
-        
-        breadcrumb = ["dummy"]
-        while k is not None:
-            breadcrumb.append(k.slug)
-            k = k.parent
-        for i in range(len(breadcrumb)-1):
-            breadcrumb[i] = '/'.join(breadcrumb[-1:i-1:-1])
-        return breadcrumb[-1:0:-1]
 
 
 class Comment(models.Model):
