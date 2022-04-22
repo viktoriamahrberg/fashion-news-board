@@ -1,9 +1,8 @@
 from django.shortcuts import render, get_object_or_404
 from django.views import generic, View
-from .models import Post, Comment
+from .models import Post
 from .forms import CommentForm, AddPostForm
 from django.views.generic.edit import CreateView
-
 
 
 class PostList(generic.ListView):
@@ -58,26 +57,9 @@ class PostDetail(View):
 
 class CreatePost(CreateView):
    
-        model = Post
-        form_class = AddPostForm
-        template_name = 'add_post.html'
-
-   
-
-    #     add_post_form = AddPostForm(data=request.POST)
-    #     if add_post_form.is_valid():
-    #         add_post_form.instance.email = request.user.email
-    #         add_post_form.instance.name = request.user.username
-    #         add_post = add_post_form.save(commit=False)
-    #         add_post.post = post
-    #         add_post.save()
-    #     else:
-    #         add_post_form = AddPostForm()
-
-    #     return render (
-    #         request,
-    #         "add_post.html",
-    #         {
-    #             "add_post_form": AddPostForm(),
-    #         }
-    #     )
+    model = Post
+    form_class = AddPostForm
+    template_name = 'add_post.html'
+    
+  
+       

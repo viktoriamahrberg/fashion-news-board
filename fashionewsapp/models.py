@@ -1,7 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
-
+from django.template.defaultfilters import slugify
+from django.urls import reverse
 
 
 class Post(models.Model):
@@ -16,7 +17,7 @@ class Post(models.Model):
     featured_image = CloudinaryField('image', default='news_image')
     excerpt = models.TextField(blank=True)
     date_published = models.DateTimeField(auto_now_add=True)
-    original_news_link = models.URLField(blank=False, null=False)
+    original_news_link = models.URLField(blank=True, null=True)
 
     class Meta:
         ordering = ['date_published']
@@ -24,6 +25,14 @@ class Post(models.Model):
     def __str__(self):
         return self.title
 
+    def save(self):
+        if not self.slug:
+            self.slug = slugify(self.title)
+
+        super(Post, self).save()
+
+    def get_absolute_url(self):
+        return reverse ('post_detail', args=[str(self.slug)])
 
 
 class Comment(models.Model):

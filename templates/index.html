@@ -22,7 +22,7 @@
                                 <img class="card-img-top" src=" {{ post.featured_image.url }}">
                                 {% endif %}
                             </div>
-                            <a href="{% url 'post_detail' post.slug%}" class="post-link">
+                            <a href="{% url 'post_detail' post.slug %}" class="post-link">
                                 <h5 class="card-title mt-4">{{ post.title }}</h5>
                                 <p class="card-text">{{ post.excerpt }}</p>
                             </a>

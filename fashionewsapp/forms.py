@@ -2,6 +2,7 @@ from .models import Comment, Post
 from django import forms
 
 
+
 class CommentForm(forms.ModelForm):
     class Meta:
         model = Comment
@@ -12,5 +13,6 @@ class CommentForm(forms.ModelForm):
 class AddPostForm(forms.ModelForm):
     class Meta:
         model = Post
-        fields = ('title', 'slug', 'content', 'featured_image')
+        fields = ('title', 'author', 'content', 'featured_image', 'excerpt', 'original_news_link',)
+      
 
