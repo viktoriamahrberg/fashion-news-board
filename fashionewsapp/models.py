@@ -32,7 +32,7 @@ class Post(models.Model):
         super(Post, self).save()
 
     def get_absolute_url(self):
-        return reverse ('post_detail', args=[str(self.slug)])
+        return reverse('post_detail', args=[str(self.slug)])
 
 
 class Comment(models.Model):

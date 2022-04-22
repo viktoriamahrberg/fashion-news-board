@@ -3,18 +3,19 @@
 
 {% load crispy_forms_tags %}
 
-<div class="col-md-4 mt-5 mb-5 offset-md-2">
-    <h3 class="add_post_title text-center">Share your local news with the world - simply create the post and press share
-    </h3>
+
+<div class="col-md-8 mt-4 mb-4 offset-md-2">
+    <h3 class="add_post_title text-center">Share your local news!</h3>
+    <p class="add_post_paragraph text-center">Simply create the post and the original news sourcelink and click the Publish-button
+    </h3></p>
 </div>
 <div class="container">
     <div class="row">
-      <div class="col-md-8 mt-4 offset-md-2">
+      <div class="col-md-6 mt-4 text-center">
 <form method="post">
         {% csrf_token %}
         {{ form.as_p | safe }}
-      
-    </textarea>
+    
         <button class="btn btn-outline-success" input type="submit">Publish
      </button>
 </div>

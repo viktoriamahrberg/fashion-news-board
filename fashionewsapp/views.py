@@ -1,11 +1,14 @@
 from django.shortcuts import render, get_object_or_404
 from django.views import generic, View
 from .models import Post
-from .forms import CommentForm, AddPostForm
-from django.views.generic.edit import CreateView
+from .forms import CommentForm, AddPostForm, EditPostForm
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 
 
 class PostList(generic.ListView):
+    """
+    View for displaying posts list on index.html
+    """
     model = Post
     queryset = Post.objects.order_by("-date_published")
     template_name = 'index.html'
@@ -13,13 +16,14 @@ class PostList(generic.ListView):
 
 
 class PostDetail(View):
-
+    """
+    View for displaying posts individually 
+    """
     def get(self, request, slug, *args, **kwargs):
         post = get_object_or_404(Post, slug=slug)
         comments = post.comments.order_by('date_published')
-        # liked = False
-        # if post.likes.filter(id=self.request.user.id).exists()
-        return render (
+    
+        return render(
             request,
             "post_detail.html",
             {
@@ -43,7 +47,7 @@ class PostDetail(View):
         else:
             comment_form = CommentForm()
 
-        return render (
+        return render(
             request,
             "post_detail.html",
             {
@@ -56,10 +60,29 @@ class PostDetail(View):
     
 
 class CreatePost(CreateView):
-   
+    """
+    View for creating posts on add_post.html
+    """ 
     model = Post
     form_class = AddPostForm
     template_name = 'add_post.html'
+
+
+class EditPost(UpdateView):
+    """
+    View for editing posts on edit_post.html
+    """ 
+    model = Post
+    form_class = EditPostForm
+    template_name = 'edit_post.html'
+
+
+class DeletePost(DeleteView):
+    """
+    View for editing posts on edit_post.html
+    """ 
+    model = Post
+    template_name = 'delete_post.html'
     
-  
+    ##REVERESE HERE
        
