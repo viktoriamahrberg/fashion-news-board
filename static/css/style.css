@@ -10,6 +10,8 @@ hr {
 body {
     font-family: 'Alatsi', sans-serif;
     color: #191919;
+    margin-bottom: 120px;
+    
 }
 
 a {
@@ -111,6 +113,13 @@ textarea {
 
 footer {
     color: #B87869;
+}
+.footer {
+    width: 100%;
+    margin-bottom: 0px;
+    height: 100px;
+    bottom: 0px;
+    position: fixed;
 }
 
 

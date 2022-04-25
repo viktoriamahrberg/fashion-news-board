@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{% load crispy_forms_tags %}
+
+<div class="container">
+    <div class="col-md-10 mb-4 mt-4 mx-auto">
+        <div class="row">
+            <form method="post">{% csrf_token %}
+                <h4 class="delete_post">Are you sure you want to delete {{ post.title }}? </h4>
+                <input type="submit" value="Delete" class="btn btn-danger mt-2">
+            </form>
+            </div>
+    </div>
+
+</div>
+
+
+
+            {% endblock content %}

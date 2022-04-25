@@ -6,9 +6,9 @@
     <div class="col-md-10 mb-4 mt-4 mx-auto">
         <div class="row">
             <!-- <div class="col-md-8 justify-content-center"> -->
-                {% if "news_image" in post.featured_image.url %}
-                <img src="../static/images/default_image.jpg" with="100%">
-                {% else %}
+            {% if "news_image" in post.featured_image.url %}
+            <img src="../static/images/default_image.jpg" with="100%">
+            {% else %}
             <img src="{{ post.featured_image.url }}">
             {% endif %}
 
@@ -20,9 +20,24 @@
             </p>
             <p class="post-link">Find the original news link here:
                 <br>
-                {{ post.original_news_link }}              
+                {{ post.original_news_link }}
             </p>
+           
 
+<!-- ADD EDIT AND DELETE LINK BUTTON -->
+
+
+            {% if post.author == request.user %}
+            <div class="col-md-2 mb-4 mt-4">
+                <div class="row">
+                   <a href="{% url 'edit_post' post.slug %}" class="btn btn-outline-success">Edit </a> 
+                    </div>
+                    <div class="row">
+                    <a href="{% url 'delete_post' post.slug %}" class="btn btn-danger mt-2" >Delete</a>
+                       
+                </div>
+            </div>
+            {% endif %}
         </div>
     </div>
 </article>
