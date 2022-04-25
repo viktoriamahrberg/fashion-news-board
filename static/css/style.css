@@ -9,7 +9,7 @@ body {
     font-family: 'Alatsi', sans-serif;
     color: #191919;
     margin-bottom: 120px;
-    
+
 }
 
 a {
@@ -18,7 +18,7 @@ a {
 }
 
 li {
-    color: #fff; 
+    color: #fff;
 }
 
 i {
@@ -50,6 +50,7 @@ i:active {
     border-color: #B87869;
     box-shadow: #B87869;
 }
+
 .btn-outline-success:hover,
 .btn-outline-success:active,
 .btn-outline-success:focus {
@@ -79,15 +80,14 @@ i:active {
 }
 
 .navbar-toggler-icon {
-    background-image: url(
-"data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(184, 120, 105, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(184, 120, 105, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
 }
 
 .logo {
     font-family: 'Syncopate', sans-serif;
     font-weight: 700;
     font-size: 40px;
-    color: #fff; 
+    color: #fff;
 }
 
 .half-logo {
@@ -102,6 +102,7 @@ i:active {
 textarea {
     font-family: oxygenregular, sans-serif;
 }
+
 .comment-content {
     font-family: oxygenregular, sans-serif;
 }
@@ -118,6 +119,7 @@ textarea {
 footer {
     color: #B87869;
 }
+
 .footer {
     width: 100%;
     margin-bottom: 0px;
@@ -125,6 +127,3 @@ footer {
     bottom: 0px;
     position: fixed;
 }
-
-
-

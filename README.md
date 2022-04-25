@@ -4,14 +4,30 @@ Live link [here](https://fashionews.herokuapp.com/)
 
 # About
 
-
+Fashionews is a blog-like news page where anyone can share their local news from the fashion industry. May it be about a new fashion school with focus on sustainability and social justice in your city or the cool concept store in your home-town now expanding to another city, share it! 
+We can read about the big brands revenue and change of directors on a daily basis in the big newspapers - this is not about them -this is about supporting and sharing our local fashion-heros.
 
 
 ## UX
 
 ### Structure of the website
 
+The site is simply structured after a blog concept where the news are added in chronological order with the latest ones on top. The home page is paginated witn only 6 posts per page - for users not to be overwhelmed with content. 
+
+I believe in peoples right and judgement to share fashion related post in an appropirate manner and therefor news-post are not being approved by the admin - but can be removed by the admin if needed.
+
+Any user on the page can read the excerpt of the news and click on each post for further reading, but only signed in users can make a comment to the news-post. 
+
+Any *signed in* user can:
+    - Comment on posts
+    - Create posts
+    - Edit posts
+    - Delete posts
+
+
 ### Databases
+
+The app is built with Django *User* model as authentication system to register users with email and password. 
 
 
 ### Wireframes
@@ -90,6 +106,36 @@ Fashionews target audience is
 ### User stories testing
 
 ### Issues found during site development
+
+
+1. **ISSUE:** Add custom color to toggle navbar
+
+**FIX:** Change the 'rgba' in the background image URL:
+
+`.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(184, 120, 105, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+`
+
+![Navbar-toggler](/static/readme_images/navbar-toggler.png)
+
+
+2. **ISSUE:** URL path from `<button>` on index.html to delete_post.html or edit_post.html not working 
+
+**FIX:** Change from `<button>` to `<a href="">` made the url path work correctly
+
+
+3. **ISSUE:** Wrong path by having `<slug>` in the beginning: `path('<slug>/delete_post/..` created an error.
+
+**FIX:** Change the path with the slug in the end of the url `path('/delete_post/<slug>..` 
+
+4. **ISSUE:** Several templating issues due to commented out comments
+
+**FIX / LESSON LEARNED:** Templating language can't be commented out - it will still be read if there is an error in the out-commented code. 
+
+
+
+
 
 ### Performance testing
 
