@@ -14,23 +14,30 @@ We can read about the big brands revenue and change of directors on a daily basi
 
 The site is simply structured after a blog concept where the news are added in chronological order with the latest ones on top. The home page is paginated witn only 6 posts per page - for users not to be overwhelmed with content. 
 
-I believe in peoples right and judgement to share fashion related post in an appropirate manner and therefor news-post are not being approved by the admin - but can be removed by the admin if needed.
+I believe in peoples right and judgement to share fashion related news in an appropirate manners and therefor news-post are not being approved by the admin - but can be removed by the admin if needed.
 
 Any user on the page can read the excerpt of the news and click on each post for further reading, but only signed in users can make a comment to the news-post. 
 
-Any *signed in* user can:
+Any *signed in* user can additionally:
     - Comment on posts
     - Create posts
     - Edit posts
     - Delete posts
 
 
+
+
 ### Databases
 
-The app is built with Django *User* model as authentication system to register users with email and password. 
+The app is built with Django *User* model as authentication system to register users with email, username and password. 
+
+allauth......
+
+
 
 
 ### Wireframes
+
 
 ### Website owner business goals
 Fashionews target audience is 
@@ -162,6 +169,13 @@ Heroku steps (after created account or logged in):
 8. Then in the Manual Deploy section, press Deploy Branch
 9. After project has been deployed successfully I clicked the View-button to see the program run in the terminal.
 
+
+## Credits
+
+* [Stack Overflow - Show Edit button on owners post](https://stackoverflow.com/questions/69059272/only-show-edit-button-on-owners-posts-django) - Show edit-button only on owners post to allow editing (`{% if post.author == request.user %}`)
+
+* 
+ 
 
 
 Welcome Vikmah,

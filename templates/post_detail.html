@@ -3,9 +3,9 @@
 
 {% load crispy_forms_tags %}
 <article class="container">
-    <div class="col-md-10 mb-4 mt-4 mx-auto">
+    <div class="col-sm-10 mb-4 mt-4 mx-auto">
         <div class="row">
-            <!-- <div class="col-md-8 justify-content-center"> -->
+
             {% if "news_image" in post.featured_image.url %}
             <img src="../static/images/default_image.jpg" with="100%">
             {% else %}
@@ -20,7 +20,7 @@
             </p>
             <p class="post-link">Find the original news link here:
                 <br>
-                {{ post.original_news_link }}
+                <a target="_blank" href="{{ post.original_news_link }}">{{ post.original_news_link }}</a>
             </p>
 
             {% if post.author == request.user %}
@@ -89,6 +89,7 @@
         </div>
     </div>
 </div>
+
 <script>
     setTimeout(function () {
         let messages = document.getElementById("success-msg");

@@ -3,30 +3,31 @@
 
 {% load crispy_forms_tags %}
 <div class="container">
-    <div class="row">
-        <div class="col-md-8 mt-4 offset-md-2">
+    <div class="row g-0">
+        <div class="col mx-auto mt-4">
             <h3 class="add_post_title text-center">Share your local news!</h3>
             <p class="add_post_paragraph text-center">Simply create the post and the original news sourcelink and click
                 the Publish-button
-                </h3>
             </p>
         </div>
-        <div class="row">
-            <div class="col mt-4">
+        <div class="row g-0 mt-4">
+            <div class="col">
+            </div>
+            <div class="col-sm-4 col-sm-offset-4">
                 <form method="post">
                     {% csrf_token %}
                     {{ form.as_p | safe }}
-
-                    <button class="btn btn-outline-success" input type="submit">Publish
-                    </button>
+                    <button class="btn btn-outline-success" input type="submit">Publish</button>
+                </form>
             </div>
+            <div class="col"></div>
         </div>
     </div>
 </div>
-    </form>
 
 
 
 
 
-    {% endblock content %}
+
+{% endblock content %}

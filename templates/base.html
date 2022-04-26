@@ -32,6 +32,8 @@
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 
+<!-- Navbar -->
+
 <body>
   <nav class="navbar navbar-expand-lg navbar-white bg-black">
     <div class="container-fluid">
@@ -43,14 +45,18 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+          <!-- Create Post and Logout nav-links for when user is logged in -->
           {% if user.is_authenticated %}
           <li class="nav-item">
             <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'add_post' %}">Create Post</a>
-            </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'add_post' %}">Create Post</a>
+          </li>
           </li>
           {% else %}
+
+          <!-- Register and Login nav-links for when user is logged out -->
           <li class="nav-item">
             <a class="nav-link" href="{% url 'account_signup' %}">Register</a>
           </li>
@@ -58,9 +64,6 @@
             <a class="nav-link" href="{% url 'account_login' %}">Login</a>
           </li>
           {% endif %}
-
-
-
 
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
@@ -88,11 +91,11 @@
 
   <main class="flex-shrink-0 main-bg">
     {% block content %}
-    <!-- Content goes here -->
+    <!-- Content -->
     {% endblock content %}
   </main>
 
-
+ <!-- Footer -->
   <footer class="footer mt-5 py-4  bg-black text-center">
     <p class="text-center text-white">Connect with us on: </p>
     <a href="#"><i class="fab fa-facebook-square ms-4"></i></a>
@@ -103,4 +106,5 @@
 
   </footer>
 </body>
+
 </html>
