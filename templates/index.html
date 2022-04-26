@@ -4,7 +4,8 @@
 {% block content %}
 <div class="col-md-8 mt-5 mb-5 offset-md-2 text-center">
     <h2 class="tagline">Share your local fashion news with the world</h2>
-    <p>No news are small news. Every corner of the world have something to say so - spread it and read it here on Fashionews.
+    <p>No news are small news. Every corner of the world have something to say so - spread it and read it here on
+        Fashionews.
         <p class="fst-italic"> Simply create an account to publish your own post or comment on others. </p>
     </p>
 </div>
@@ -12,53 +13,49 @@
 <!-- News-posts -->
 <div class="container-fluid">
     <div class="row">
-        <div class="col-12">
-            <div class="row">
-                {% for post in post_list %}
-                <div class="col-md-6 left ml-3 mr-3">
-                    <div class="card mb-3">
-                        <div class="card-body">
-                            <div class="image-container">
-                                {% if "news_image" in post.featured_image.url %}
-                                <img class="card-img-top" src="../static/images/default_image.jpg">
-                                {% else %}
-                                <img class="card-img-top" src=" {{ post.featured_image.url }}">
-                                {% endif %}
-                            </div>
-                            <a href="{% url 'post_detail' post.slug %}" class="post-link">
-                                <h5 class="card-title mt-4">{{ post.title }}</h5>
-                                <p class="card-text">{{ post.excerpt }}</p>
-                            </a>
-                            <hr />
-                            <p class="card-text"><small class="text-muted"> {{  post.date_published }}</small></p>
-                        </div>
+        {% for post in post_list %}
+        <div class="col-md-6  ml-3 mr-3">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <div class="image-container">
+                        {% if "news_image" in post.featured_image.url %}
+                        <img class="card-img-top" src="../static/images/default_image.jpg">
+                        {% else %}
+                        <img class="card-img-top" src=" {{ post.featured_image.url }}">
+                        {% endif %}
                     </div>
-                </div>
-
-                <!-- Displays 2 posts in a row -->
-                {% if forloop.counter|divisibleby:2 %}
-                <div class="row">
-                    {% endif %}
-                    {% endfor %}
+                    <a href="{% url 'post_detail' post.slug %}" class="post-link">
+                        <h5 class="card-title mt-4">{{ post.title }}</h5>
+                        <p class="card-text">{{ post.excerpt }}</p>
+                    </a>
+                    <hr />
+                    <p class="card-text"><small class="text-muted"> {{  post.date_published }}</small></p>
                 </div>
             </div>
         </div>
+        <!-- Displays 2 posts in a row -->
+        {% if forloop.counter|divisibleby:2 %}
     </div>
+    <div class="row">
+        {% endif %}
+        {% endfor %}
+    </div>
+</div>
 
-    <!-- Pagination 4 to page -->
-    {% if is_paginated %}
-    <nav aria-label="Page navigation">
-        <ul class="pagination justify-content-center">
-            {% if page_obj.has_previous %}
-            <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
-            {% endif %}
-            {% if page_obj.has_next %}
-            <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
+<!-- Pagination 4 to page -->
+{% if is_paginated %}
+<nav aria-label="Page navigation">
+    <ul class="pagination justify-content-center">
+        {% if page_obj.has_previous %}
+        <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
+        {% endif %}
+        {% if page_obj.has_next %}
+        <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
 
-            {% endif %}
-        </ul>
-    </nav>
-    {% endif %}
+        {% endif %}
+    </ul>
+</nav>
+{% endif %}
 </div>
 
 

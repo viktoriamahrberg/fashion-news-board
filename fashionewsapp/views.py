@@ -69,6 +69,7 @@ class CreatePost(CreateView):
     template_name = 'add_post.html'
 
 
+
 class EditPost(UpdateView):
     """
     View for editing posts on edit_post.html
