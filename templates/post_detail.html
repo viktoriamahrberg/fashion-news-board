@@ -1,17 +1,18 @@
 {% extends 'base.html' %}
 {% block content %}
 
+<!-- Detailed news-post -->
 {% load crispy_forms_tags %}
 <article class="container">
     <div class="col-sm-10 mb-4 mt-4 mx-auto">
         <div class="row">
-
+            <!-- Image -->
             {% if "news_image" in post.featured_image.url %}
             <img src="../static/images/default_image.jpg" with="100%">
             {% else %}
             <img src="{{ post.featured_image.url }}">
             {% endif %}
-
+            <!-- News post -->
             <h1 class="post-title">{{ post.title }}</h1>
             <p class="card-text"><small class="text-muted"> {{  post.date_published }}</small></p>
             <hr />
@@ -22,15 +23,15 @@
                 <br>
                 <a target="_blank" href="{{ post.original_news_link }}">{{ post.original_news_link }}</a>
             </p>
-
+            <!-- If owner of the post: delete and edit post -->
             {% if post.author == request.user %}
             <div class="col-md-2 mb-4 mt-4">
                 <div class="row">
-                   <a href="{% url 'edit_post' post.slug %}" class="btn btn-outline-success">Edit </a> 
-                    </div>
-                    <div class="row">
-                    <a href="{% url 'delete_post' post.slug %}" class="btn btn-danger mt-2" >Delete</a>
-                       
+                    <a href="{% url 'edit_post' post.slug %}" class="btn btn-outline-success">Edit </a>
+                </div>
+                <div class="row">
+                    <a href="{% url 'delete_post' post.slug %}" class="btn btn-danger mt-2">Delete</a>
+
                 </div>
             </div>
             {% endif %}
@@ -42,7 +43,7 @@
     <div class="row">
         <div class="col-md-7 mb-4 mt-4">
 
-
+            <!-- Comments -->
             <h4 class="comment-title mb-4">Comments:</h4>
             {% for comment in comments %}
             <div class="comments" style="width: 18rem;">
@@ -56,10 +57,15 @@
             {% endfor %}
         </div>
         <div class="col-md-5 mb-4 mt-4">
+
+            <!-- Success message when comment has been published -->
             {% if commented %}
             <div class="alert alert-success" id="success-msg" role="alert">
                 Your comment has been published
             </div>
+            {% endif %}
+
+            <!-- Create a comment -->
             {% if user.is_authenticated %}
             <h4 class="leave-comment-title mb-4">Leave a comment:</h4>
             <form method="post" style="margin-top: 1.2em;">
@@ -70,32 +76,17 @@
                     <button class="btn btn-outline-success" type="submit">Submit</button>
                 </div>
             </form>
-
-            {% endif %}
-            {% else %}
-            {% if user.is_authenticated %}
-            <h4 class="leave-comment-title mb-4">Leave a comment:</h4>
-            <form method="post" style="margin-top: 1.2em;">
-                {{ comment_form | crispy }}
-                {% csrf_token %}
-                <div class="col-md-6 mb-4 mt-4">
-                    <p class="commenter">Commenting as: {{ user.username }}</p>
-                    <button class="btn btn-outline-success" type="submit">Submit</button>
-                </div>
-            </form>
-
-            {% endif %}
             {% endif %}
         </div>
     </div>
 </div>
-
+<!-- Adds success-message when publishing a comment -->
 <script>
     setTimeout(function () {
         let messages = document.getElementById("success-msg");
         let alert = new bootstrap.Alert(messages);
         alert.close();
-    }, 3000);
+    }, 4000);
 </script>
 
 {% endblock content %}

@@ -3,20 +3,25 @@
 
 {% load crispy_forms_tags %}
 
+<!-- Edit post form -->
 
 <div class="container">
-    <div class="col-md-10 mb-4 mt-4 mx-auto">
-        <div class="row">
+    <div class="row g-0">
+        <div class="col mx-auto mt-4">
             <h3 class="edit_post_title text-center">Edit Post:</h3>
-
-            <form method="post">
-                {% csrf_token %}
-                {{ form.as_p }}
-                {{ content | safe }}
-                <input type="submit" value="Save changes" class="btn btn-outline-success">
-            </form>
-
         </div>
-    </div>
+        <div class="row g-0 mt-4">
+            <div class="col"></div>
+            <div class="col-sm-4 col-sm-offset-4">
+                <form method="post">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    {{ content | safe }}
+                    <input type="submit" value="Save changes" class="btn btn-outline-success">
+                </form>
+            </div>
+            <div class="col"></div>
+        </div>
+     </div>
 </div>
 {% endblock content %}

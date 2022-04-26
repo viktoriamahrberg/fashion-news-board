@@ -114,6 +114,18 @@ textarea {
     color: #B87869;
 }
 
+/* Pagination link */
+
+a.page-link {
+    color: #B87869;
+}
+.page-link {
+    border-color: #B87869; 
+    border-radius: 2px;
+}
+.page-link ::before::after {
+    background-color: #B87869;
+}
 /* Footer */
 
 footer {

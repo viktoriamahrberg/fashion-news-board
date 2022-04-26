@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 
+<!-- Tagline / About -->
 {% block content %}
 <div class="col-md-8 mt-5 mb-5 offset-md-2 text-center">
     <h2 class="tagline">Share your local fashion news with the world</h2>
@@ -8,14 +9,13 @@
     </p>
 </div>
 
+<!-- News-posts -->
 <div class="container-fluid">
     <div class="row">
         <div class="col-12">
             <div class="row">
                 {% for post in post_list %}
-
                 <div class="col-md-6 left ml-3 mr-3">
-
                     <div class="card mb-3">
                         <div class="card-body">
                             <div class="image-container">
@@ -34,6 +34,8 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Displays 2 posts in a row -->
                 {% if forloop.counter|divisibleby:2 %}
                 <div class="row">
                     {% endif %}
@@ -42,6 +44,8 @@
             </div>
         </div>
     </div>
+
+    <!-- Pagination 4 to page -->
     {% if is_paginated %}
     <nav aria-label="Page navigation">
         <ul class="pagination justify-content-center">

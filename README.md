@@ -12,7 +12,7 @@ We can read about the big brands revenue and change of directors on a daily basi
 
 ### Structure of the website
 
-The site is simply structured after a blog concept where the news are added in chronological order with the latest ones on top. The home page is paginated witn only 6 posts per page - for users not to be overwhelmed with content. 
+The site is simply structured after a blog concept where the news are added in chronological order with the latest ones on top. The home page is paginated witn only 4 posts per page - for users not to be overwhelmed with content. 
 
 I believe in peoples right and judgement to share fashion related news in an appropirate manners and therefor news-post are not being approved by the admin - but can be removed by the admin if needed.
 
