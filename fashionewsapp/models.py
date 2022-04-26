@@ -9,15 +9,15 @@ class Post(models.Model):
     """
     Post Model
     """
-    title = models.CharField(max_length=200, unique=True)
+    title = models.CharField(max_length=200, unique=True, blank=False)
     slug = models.SlugField(max_length=200, unique=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="news_post")
     updated_on = models.DateTimeField(auto_now=True)
-    content = models.TextField()
+    content = models.TextField(blank=False)
     featured_image = CloudinaryField('image', default='news_image')
-    excerpt = models.TextField(blank=True)
+    excerpt = models.TextField(blank=False)
     date_published = models.DateTimeField(auto_now_add=True)
-    original_news_link = models.URLField(blank=True, null=True)
+    original_news_link = models.URLField(blank=False, null=True)
 
     class Meta:
         ordering = ['date_published']
