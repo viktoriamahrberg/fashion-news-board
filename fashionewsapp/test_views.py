@@ -10,6 +10,4 @@ class TestViews(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'index.html', 'base.html')
 
-    def test_edit_post_page(self):
-        response = self.client.get('/add_post')
-        self.assertTemplateUsed(response, 'add_post.html')
+  

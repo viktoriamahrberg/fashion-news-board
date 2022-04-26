@@ -4,12 +4,10 @@ hr {
     color: #B87869
 }
 
-
 body {
     font-family: 'Alatsi', sans-serif;
     color: #191919;
     margin-bottom: 120px;
-
 }
 
 a {
@@ -97,6 +95,12 @@ i:active {
     letter-spacing: 5px;
 }
 
+/* Images */
+
+.card-img-top {
+    width: 100%;
+}
+
 /* Form */
 
 textarea {
@@ -107,7 +111,6 @@ textarea {
     font-family: oxygenregular, sans-serif;
 }
 
-
 /* Error messages */
 
 .errorlist li {
@@ -117,15 +120,18 @@ textarea {
 /* Pagination link */
 
 a.page-link {
-    color: #B87869;
-}
-.page-link {
-    border-color: #B87869; 
-    border-radius: 2px;
-}
-.page-link ::before::after {
+    color: #000;
     background-color: #B87869;
+    border-color: #fff;
+    border-radius: 5px;
 }
+a.page-link:hover {
+    color: #000;
+    background-color: #fff;
+    border-color: #B87869;
+}
+
+
 /* Footer */
 
 footer {
