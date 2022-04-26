@@ -26,10 +26,13 @@ Any *signed in* user can additionally:
 
 
 
-
 ### Databases
 
-The app is built with Django *User* model as authentication system to register users with email, username and password. 
+The app is built on two models, Post and Comment which allows users to comment to a post
+
+Djangos built in library *Allauth* was used to manage users to login, logout and create account.
+
+In the back-end admin panel, the admin can view displayed posts, search by *title* and *content* and filter posts by date_published.
 
 allauth......
 
@@ -174,7 +177,7 @@ Heroku steps (after created account or logged in):
 
 * [Stack Overflow - Show Edit button on owners post](https://stackoverflow.com/questions/69059272/only-show-edit-button-on-owners-posts-django) - Show edit-button only on owners post to allow editing (`{% if post.author == request.user %}`)
 
-* 
+* [Bootstrap flash-messages](https://getbootstrap.com/docs/4.0/components/alerts/)
  
 
 
