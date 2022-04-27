@@ -1,7 +1,6 @@
 from .models import Comment, Post
 from django import forms
-from django_summernote.widgets import SummernoteWidget, SummernoteInplaceWidget
-
+from django_summernote.widgets import SummernoteWidget
 
 
 class CommentForm(forms.ModelForm):
@@ -24,7 +23,7 @@ class AddPostForm(forms.ModelForm):
             'content': SummernoteWidget(),
         }
 
-  
+
 class EditPostForm(forms.ModelForm):
     """
     Editing posts
@@ -35,4 +34,4 @@ class EditPostForm(forms.ModelForm):
         widgets = {
             'content': SummernoteWidget()
         }
-       
+

@@ -19,8 +19,10 @@ class Post(models.Model):
     date_published = models.DateTimeField(auto_now_add=True)
     original_news_link = models.URLField(blank=False, null=True)
 
-
     class Meta:
+        """
+        Order newest post first
+        """
         ordering = ['date_published']
 
     def __str__(self):

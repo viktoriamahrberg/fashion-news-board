@@ -136,7 +136,10 @@ Fashionews target audience is
 
 <!-- | Signed in user wants to create a DELETE A COMMENT to post | Leave a Comment field is shown on full news-post page and signed in can leave a comment that is being published on the same page |  [x] -->
 
+| User wants to Register | User is being prompt to fill in all fields if failing to do so as well as a long and uncommon password. Success message is shown below navbar |  [x]
 
+
+ADMIN STORIES TO ADD 
 
 
 

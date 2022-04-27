@@ -6,7 +6,6 @@ from .forms import CommentForm, AddPostForm, EditPostForm
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 
 
-
 class PostList(generic.ListView):
     """
     View for displaying posts list on index.html
@@ -24,7 +23,7 @@ class PostDetail(View):
     def get(self, request, slug, *args, **kwargs):
         post = get_object_or_404(Post, slug=slug)
         comments = post.comments.order_by('date_published')
-    
+
         return render(
             request,
             "post_detail.html",
@@ -38,7 +37,7 @@ class PostDetail(View):
     def post(self, request, slug, *args, **kwargs):
         post = get_object_or_404(Post, slug=slug)
         comments = post.comments.order_by('date_published')
-  
+
         comment_form = CommentForm(data=request.POST)
         if comment_form.is_valid():
             comment_form.instance.email = request.user.email
@@ -59,6 +58,7 @@ class PostDetail(View):
                 "comment_form": CommentForm(),
             }
         )
+
 
 class CreatePost(CreateView):
     """
