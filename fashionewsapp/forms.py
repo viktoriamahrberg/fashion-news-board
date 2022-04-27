@@ -24,7 +24,8 @@ class AddPostForm(forms.ModelForm):
         widgets = {
             'content': SummernoteWidget(),
         }
-    
+
+  
 class EditPostForm(forms.ModelForm):
     """
     Editing posts
@@ -33,7 +34,7 @@ class EditPostForm(forms.ModelForm):
         model = Post
         fields = ('title', 'content', 'excerpt', 'original_news_link')
         widgets = {
-            'content': SummernoteWidget(attrs={'width': '50%'}),
+            'content': SummernoteWidget()
         }
        
 
