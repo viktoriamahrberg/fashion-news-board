@@ -6,6 +6,7 @@ from .forms import CommentForm, AddPostForm, EditPostForm
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 
 
+
 class PostList(generic.ListView):
     """
     View for displaying posts list on index.html
@@ -58,7 +59,6 @@ class PostDetail(View):
                 "comment_form": CommentForm(),
             }
         )
-    
 
 class CreatePost(CreateView):
     """
@@ -67,7 +67,6 @@ class CreatePost(CreateView):
     model = Post
     form_class = AddPostForm
     template_name = 'add_post.html'
-
 
 
 class EditPost(UpdateView):
@@ -87,4 +86,3 @@ class DeletePost(DeleteView):
     template_name = 'delete_post.html'
     success_url = reverse_lazy('home')
     
-       

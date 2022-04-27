@@ -115,6 +115,31 @@ Fashionews target audience is
 
 ### User stories testing
 
+
+| Test | Expected Output | Passed
+| ----------- | ----------- | ---- |
+|  User loads the home page | All content loads without error both as logged in or logged out, navigation bar and content is fully responsive| [x]
+| User loads the home page as signed in | Only Logout and Create Post links show in nav bar and all content loads and work as expected |  [x]
+| User loads the home page as logged out | Only Register and Login links show in nav bar and all content loads and work as expected |  [x]
+| User clicks on a news-post | Full news-post shown on its own page |  [x]
+| User enters a post they are *not* owner of | Full news-post page shown without Edit and Delete button |  [x]
+| User enters a post they are owner of | Full news-post page shown *with* Edit and Delete button |  [x]
+| User clicks on Edit button | Site redirects user to "Edit" page |  [x]
+| User loads the Edit page | Original content is prepopulated in the edit form, user can make edits and save changes and is then being taken back to the full news-post page |  [x]
+| User tries to leave fields in the Edit form empty | Form can not be submitted and user is being prompted to enter data |  [x]
+| User clicks on Delete button | Site redirects user to "Delete" page |  [x]
+| User loads the Delete page | User is being asked if they are sure they want to delete post, and if they proceed site redirects them to home-page and post is deleted. |  [x]
+| User clicks on 'Original News Link' at bottom of post | New window opens and takes user to the original news article |  [x]
+| User clicks on FASHIONEWS logo | User is redirected to HOME page  |  [x]
+| Signed in user clicks on Create Post in nav-bar | User is being redirected to Create Post where user must fill out all fields or is being prompt to fill out all fields. When user save post they are being redirected to the newly created post |  [x]
+| Signed in user wants to create a comment to post | Leave a Comment field is shown on full news-post page and signed in can leave a comment that is being published on the same page |  [x]
+
+<!-- | Signed in user wants to create a DELETE A COMMENT to post | Leave a Comment field is shown on full news-post page and signed in can leave a comment that is being published on the same page |  [x] -->
+
+
+
+
+
 ### Issues found during site development
 
 
@@ -142,6 +167,8 @@ Fashionews target audience is
 4. **ISSUE:** Several templating issues due to commented out comments
 
 **FIX / LESSON LEARNED:** Templating language can't be commented out - it will still be read if there is an error in the out-commented code. 
+
+
 
 
 
@@ -178,7 +205,18 @@ Heroku steps (after created account or logged in):
 * [Stack Overflow - Show Edit button on owners post](https://stackoverflow.com/questions/69059272/only-show-edit-button-on-owners-posts-django) - Show edit-button only on owners post to allow editing (`{% if post.author == request.user %}`)
 
 * [Bootstrap flash-messages](https://getbootstrap.com/docs/4.0/components/alerts/)
+
+* [GeeksforGeeks - CreateView class-based-views](https://www.geeksforgeeks.org/createview-class-based-views-django/)
+
+* [GeeksforGeeks - DeleteView class-based-views](https://www.geeksforgeeks.org/deleteview-class-based-views-django/)
+
+* [Djangoproject - EditView class-based-views](https://docs.djangoproject.com/en/4.0/ref/class-based-views/generic-editing/)
+
+* Summernote - to show on frontend [Codedevlib](https://www.codedevlib.com/article/steps-to-implement-djangos-integrated-rich-text-editor-summernote-32382)
+
  
+
+
 
 
 Welcome Vikmah,

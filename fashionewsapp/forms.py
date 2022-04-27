@@ -13,7 +13,6 @@ class CommentForm(forms.ModelForm):
         fields = ('body',)
 
 
-
 class AddPostForm(forms.ModelForm):
     """
     Creating new posts
@@ -37,5 +36,3 @@ class EditPostForm(forms.ModelForm):
             'content': SummernoteWidget()
         }
        
-
-
