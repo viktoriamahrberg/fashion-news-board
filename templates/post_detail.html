@@ -8,9 +8,9 @@
         <div class="row">
             <!-- Image -->
             {% if "news_image" in post.featured_image.url %}
-            <img src="../static/images/default_image.jpg" with="100%">
+            <img src="../static/images/default_image.jpg" with="100%" alt="Default image">
             {% else %}
-            <img src="{{ post.featured_image.url }}">
+            <img src="{{ post.featured_image.url }}" alt="User image">
             {% endif %}
             <!-- News post -->
             <h1 class="post-title">{{ post.title }}</h1>

@@ -18,10 +18,27 @@ class AddPostForm(forms.ModelForm):
     """
     class Meta:
         model = Post
-        fields = ('title', 'author', 'content', 'featured_image', 'excerpt', 'original_news_link')
+        fields = ('title', 'content', 'featured_image', 'excerpt', 'original_news_link', 'author',)
         widgets = {
+            'title': forms.TextInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'Required'
+                }),
             'content': SummernoteWidget(),
+            'featured_image': forms.ClearableFileInput(attrs={
+                'class': 'form-control'
+                }),
+            'excerpt': forms.TextInput(attrs={
+                'class': 'form-control',         
+                'placeholder': 'Required'
+                }),
+            'original_news_link': forms.TextInput(attrs={
+                'class': 'form-control',         
+                'placeholder': 'Required'
+                }),
         }
+
+
 
 
 class EditPostForm(forms.ModelForm):
@@ -32,6 +49,19 @@ class EditPostForm(forms.ModelForm):
         model = Post
         fields = ('title', 'content', 'excerpt', 'original_news_link')
         widgets = {
-            'content': SummernoteWidget()
+            'title': forms.TextInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'Required'
+                }),
+            'content': SummernoteWidget(),
+            'excerpt': forms.TextInput(attrs={
+                'class': 'form-control',         
+                'placeholder': 'Required'
+                }),
+            'original_news_link': forms.TextInput(attrs={
+                'class': 'form-control',         
+                'placeholder': 'Required'
+                }),
         }
+
 
