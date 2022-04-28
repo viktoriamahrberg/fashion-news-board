@@ -46,7 +46,6 @@ i:active {
 .btn-outline-success {
     color: #B87869;
     border-color: #B87869;
-    box-shadow: #B87869;
 }
 
 .btn-outline-success:hover,
@@ -55,7 +54,6 @@ i:active {
     background-color: #B87869;
     border-color: #B87869;
     color: #fff;
-    box-shadow: #B87869;
 }
 
 /* Header */

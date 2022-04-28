@@ -8,47 +8,20 @@ Fashionews is a blog-like news page where anyone can share their local news from
 We can read about the big brands revenue and change of directors on a daily basis in the big newspapers - this is not about them -this is about supporting and sharing our local fashion-heros.
 
 
-## UX
+# UX
 
-### Structure of the website
+## User Goals
 
-The site is simply structured after a blog concept where the news are added in chronological order with the latest ones on top. The home page is paginated witn only 4 posts per page - for users not to be overwhelmed with content. 
+Users should be able to read about fashion news that are not in the big tabloids.
 
-I believe in peoples right and judgement to share fashion related news in an appropirate manners and therefor news-post are not being approved by the admin - but can be removed by the admin if needed.
+Signed in users should additionally be able to share news that happen locally to them and comment on others posts.
 
-Any user on the page can read the excerpt of the news and click on each post for further reading, but only signed in users can make a comment to the news-post. 
+## Site Owner Goals
 
-Any *signed in* user can additionally:
-    - Comment on posts
-    - Create posts
-    - Edit posts
-    - Delete posts
+Site owner should be able to control users, posts and comments in case of violation of a safe community space.
 
 
-
-### Databases
-
-The app is built on two models, Post and Comment which allows users to comment to a post
-
-Djangos built in library *Allauth* was used to manage users to login, logout and create account.
-
-In the back-end admin panel, the admin can view displayed posts, search by *title* and *content* and filter posts by date_published.
-
-allauth......
-
-
-
-
-### Wireframes
-
-
-### Website owner business goals
-Fashionews target audience is 
-
-
-### User goals
-
-#### User Stories
+## User Stories
 - As a Site user I want to make posts so that I can share fashion news around me with the community.
 - As a Site user I want to see all available news on the frontpage so that I can click decide on what I want to read more about.
 - As a Site user I want to click on a news-post so that I can read the full news article.
@@ -63,22 +36,99 @@ Fashionews target audience is
 - As a Site user I want to share a post on social media so that I can interact with and spread the articles I find interesting.
 - As a Site user I want to login or register account with my Facebook or Google account so that I can speed up the login/register process.
 
-### Surface
+
+## Structure of the website
+
+The site is simply structured after a blog concept where the news are added in chronological order with the latest ones on top. The home page is paginated witn only 4 posts per page - for users not to be overwhelmed with content. 
+
+I believe in peoples right and judgement to share fashion related news in an appropirate manners and therefor news-post are not being approved by the admin - but can be removed by the admin if needed.
+
+Any user on the page can read the excerpt of the news and click on each post for further reading, but only signed in users can make a comment to the news-post. 
+
+Any *signed in* user can additionally:
+    - Comment on posts
+    - Create posts
+    - Edit posts
+    - Delete posts
+
+Full CRUD functionality is implemented for posting on the site.
+
+## Wireframes
+
+I made the wireframes in Figma:
+
+**Home Page:**
+
+![Home page](/static/readme_images/wireframe_home.png)
+
+**Detailed Post Page:**
+
+![Detailed Post page](/static/readme_images/wireframe_detailed_post.png)
+
+**Mobile:**
+
+![Mobile](/static/readme_images/wireframe_mobile.png)
 
 
-## Features
 
-### Navigation bar
+## Design
 
-### Footer
+I wanted to use a clear layout and color scheme for a serious news look and used Bootstrap as a toolkit with maincolors of black and white. 
+For the black text not to be so hard on the white background I used a greyish tone to black (fontcolor: #191919)
+To bring some life to the site a peachy-pink was used as accent color.
+Color palette was created in: [https://color.adobe.com](https://color.adobe.com/create/color-wheel)
 
-### Future implementations
+**Color Palette:**
+
+![Color palette](/static/readme_images/color_palette.png)
 
 
-## Technologies used
+**Typography:**
 
+Font used for the logo are based of two different ones: ['Syncopate'](https://fonts.google.com/specimen/Syncopate), (sans-serif)
+
+And for the body: ['Alatsi'](https://fonts.google.com/specimen/Alatsi), (sans-serif)
+
+![Logo](/static/readme_images/logo.png)
+
+
+## Database
+
+* SQLite was used in delevopment to store data
+* PostgreSQL was used in production to store data
+
+## Data Models
+
+The app is built on two models; Post and Comment which allow users to comment to a post and links the comments to the user and the post. 
+Djangos built in *Allauth* is used to manage users to login, logout and create account.
+
+In the back-end Django admin panel, the admin can view displayed posts, search by *title* and *content* and filter posts by date_published.
+
+Diagram was made in [DB diagram](https://dbdiagram.io/home) of the correlation between the models:
+
+![Diagram](/static/readme_images/fashionews_database.png)
+
+
+# Planning / Agile Development
+
+I used the Github kanban board to create issues and user stories in the early development stages of this project and moved them across the board as I progressed. 
+
+
+![Github kanban board](/static/readme_images/todo_board.png)
+
+
+
+## Features to be implemented in future:
+
+As part of the agile planning and kanban board two user stories could definitely have been implemented but due to lack of time was not: **Search bar** and **Category dropdown menu**. 
+I would consider these two as quite strong candidates for a good user experience.
+
+
+# Technologies used
 
 **Django** - The framwork the app is built on
+
+**Django Allauth** - User authentication
 
 **Bootstrap** - CSS library
 
@@ -96,20 +146,34 @@ Fashionews target audience is
 
 **Google Developer Tools** - For debugging and check responsiveness
 
+**SQLite** - Database for development
+
 **PostgreSQL** - Database
 
-**Heroku**- As a development hosting platform
+**Heroku** - As a development hosting platform
 
 **Google Fonts** - As a font resource.
 
+**TinyPNG** - Compress image file
+
+
+# Testing
+
+## Functionality testing
+
+## Code Validation
+
+[W3C CSS](https://jigsaw.w3.org/css-validator/) Validator to validate CSS
+[Html Checker](https://validator.w3.org/nu) to test HTML
+
+## Performance testing
+
+I run Lighthouse tool to check performance of the website. 
+
+<!-- IMAGE -->
 
 
 
-
-
-## Testing
-
-### Functionality testing
 
 ### Compatibility testing
 
@@ -171,21 +235,16 @@ ADMIN STORIES TO ADD
 
 **FIX / LESSON LEARNED:** Templating language can't be commented out - it will still be read if there is an error in the out-commented code. 
 
+5. **ISSUE:** When adding a post and uploading an image *front-end* the default image appeared instead of the chosen uploaded image. 
+
+**FIX:** Add `enctype="multipart/form-data` to `<form>`
 
 
 
 
 
 
-### Performance testing
 
-I run Lighthouse tool to check performance of the website. 
-
-
-### Code Validation
-
-W3C CSS Validator to validate CSS
-Html Checker to test HTML
 
 ## Deployment
 

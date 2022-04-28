@@ -15,7 +15,7 @@
         <div class="row g-0 mt-4">
             <div class="col"></div>  
             <div class="col-sm-4 col-sm-offset-4">
-                <form method="post">
+                <form method="post" enctype="multipart/form-data">
                     {% csrf_token %}
                     {{ form.as_p | safe }}
                     {{ foobar | safe }}

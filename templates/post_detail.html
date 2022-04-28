@@ -15,6 +15,7 @@
             <!-- News post -->
             <h1 class="post-title">{{ post.title }}</h1>
             <p class="card-text"><small class="text-muted"> {{  post.date_published }}</small></p>
+            <p class="card-text"><small class="text-muted"> Posted by: {{  post.author }}</small></p>
             <hr />
             <p class="post-content">
                 {{ post.content | safe }}
