@@ -187,6 +187,7 @@ I run Lighthouse tool to check performance of the website.
 | ----------- | ----------- | ---- |
 |  User loads the home page | All content loads without error both as logged in or logged out, navigation bar and content is fully responsive| [x]
 | User loads the home page as signed in | Only Logout and Create Post links show in nav bar and all content loads and work as expected |  [x]
+| User wants to Register | User is being prompt to fill in all fields if failing to do so as well as a long and uncommon password. Success message is shown below navbar |  [x]
 | User loads the home page as logged out | Only Register and Login links show in nav bar and all content loads and work as expected |  [x]
 | User clicks on a news-post | Full news-post shown on its own page |  [x]
 | User enters a post they are *not* owner of | Full news-post page shown without Edit and Delete button |  [x]
@@ -199,11 +200,10 @@ I run Lighthouse tool to check performance of the website.
 | User clicks on 'Original News Link' at bottom of post | New window opens and takes user to the original news article |  [x]
 | User clicks on FASHIONEWS logo | User is redirected to HOME page  |  [x]
 | Signed in user clicks on Create Post in nav-bar | User is being redirected to Create Post where user must fill out all fields or is being prompt to fill out all fields. When user save post they are being redirected to the newly created post |  [x]
-| Signed in user wants to create a comment to post | 'Leave a Comment' field is shown on full news-post page and signed in can leave a comment that is being published on the same page |  [x]
+| Signed in user wants to comment to post | 'Leave a Comment' field is shown on full news-post page and signed in can leave a comment that is being published on the same page |  [x]
+| Logged user wants to comment to post | 'Leave a Comment' field is not showing |  [x]
+| Signed in user wants to comment to post | 'Leave a Comment' field is shown on full news-post page and signed in can leave a comment that is being published on the same page |  [x]
 
-<!-- | Signed in user wants to create a DELETE A COMMENT to post | Leave a Comment field is shown on full news-post page and signed in can leave a comment that is being published on the same page |  [x] -->
-
-| User wants to Register | User is being prompt to fill in all fields if failing to do so as well as a long and uncommon password. Success message is shown below navbar |  [x]
 
 
 ## User stories testing
@@ -279,7 +279,7 @@ Throughout development of this site the Google Inspect function has been used an
 
 ## Deployment
 
-The site was deployment in Heroku and followed instructions by Code Institutes - [Deployment Cheat Sheet](https://codeinstitute.s3.amazonaws.com/fst/Django%20Blog%20Cheat%20Sheet%20v1.pdf)
+The site was deployment in Heroku and followed instructions by Code Institutes - [Deployment Cheat Sheet](https://codeinstitute.s3.amazonaws.com/fst/Django%20Blog%20Cheat%20Sheet%20v1.pdf) and [Heroku CLI Devtips](https://drive.google.com/file/d/12vhufODDWL4TaaaObqxxOMSwp4Tt2PCY/view) from Code Institute due to no sync between Heroku and Github.
 
 Heroku steps (after created account or logged in):
 1. "Create new App"
@@ -294,6 +294,8 @@ Heroku steps (after created account or logged in):
 
 
 ## Credits
+
+* General help and improved learning from Stack Overflow and [Django Documentation](https://docs.djangoproject.com/en/4.0/).
 
 * [Stack Overflow - Show Edit button on owners post](https://stackoverflow.com/questions/69059272/only-show-edit-button-on-owners-posts-django) - Show edit-button only on owners post to allow editing (`{% if post.author == request.user %}`)
 

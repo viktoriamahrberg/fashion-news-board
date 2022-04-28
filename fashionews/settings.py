@@ -74,9 +74,8 @@ MESSAGE_TAGS = {
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
-SUMMERNOTE_CONFIG = {
-    'width': '100%',
-}
+
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
