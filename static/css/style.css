@@ -92,7 +92,9 @@ i:active {
     color: #fff;
     letter-spacing: 5px;
 }
-
+.newspaper {
+    color: #B87869;
+}
 /* Images */
 
 .card-img-top {

@@ -206,8 +206,6 @@ I run Lighthouse tool to check performance of the website.
 | User wants to Register | User is being prompt to fill in all fields if failing to do so as well as a long and uncommon password. Success message is shown below navbar |  [x]
 
 
-
-
 ## User stories testing
 
 ### User
@@ -232,14 +230,18 @@ I run Lighthouse tool to check performance of the website.
 - As a **user** I want to **comment on a news post** 
     - As a logged-in user the Leave-a-Comment field is shown under each post and user can comment.
 
-
 ### Admin
 
 - As a **site admin** I want to **delete inappropriate users or users who spread fake news** 
     - In the back-end admin panel, admin can delete users, posts and comments.
 
 
-### Issues found during site development
+## Further testing
+
+Throughout development of this site the Google Inspect function has been used and cross-tested on different screens for responsivness. 
+
+
+## Issues found during site development
 
 
 1. **ISSUE:** Add custom color to toggle navbar
@@ -270,9 +272,6 @@ I run Lighthouse tool to check performance of the website.
 5. **ISSUE:** When adding a post and uploading an image *front-end* the default image appeared instead of the chosen uploaded image. 
 
 **FIX:** Add `enctype="multipart/form-data` to `<form>`
-
-
-
 
 
 

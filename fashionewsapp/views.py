@@ -18,7 +18,7 @@ class PostList(generic.ListView):
 
 class PostDetail(View):
     """
-    View for displaying posts individually 
+    View for displaying posts individually
     """
     def get(self, request, slug, *args, **kwargs):
         post = get_object_or_404(Post, slug=slug)
@@ -63,7 +63,7 @@ class PostDetail(View):
 class CreatePost(CreateView):
     """
     View for creating posts on add_post.html
-    """ 
+    """
     model = Post
     form_class = AddPostForm
     template_name = 'add_post.html'
@@ -72,7 +72,7 @@ class CreatePost(CreateView):
 class EditPost(UpdateView):
     """
     View for editing posts on edit_post.html
-    """ 
+    """
     model = Post
     form_class = EditPostForm
     template_name = 'edit_post.html'
@@ -81,8 +81,9 @@ class EditPost(UpdateView):
 class DeletePost(DeleteView):
     """
     View for deleting post
-    """ 
+    """
     model = Post
     template_name = 'delete_post.html'
     success_url = reverse_lazy('home')
-    
+
+
