@@ -19,9 +19,9 @@
                 <div class="card-body">
                     <div class="image-container">
                         {% if "news_image" in post.featured_image.url %}
-                        <img class="card-img-top" src="../static/images/default_image.jpg" alt="Default image">
+                        <img class="card-img-top" src="{% static 'images/default_image.jpg' %}" alt="Default image">
                         {% else %}
-                        <img class="card-img-top" src=" {{ post.featured_image.url }}" alt="User image">
+                        <img class="card-img-top" src="{{ post.featured_image.url }}" alt="User image">
                         {% endif %}
                     </div>
                     <a href="{% url 'post_detail' post.slug %}" class="post-link">

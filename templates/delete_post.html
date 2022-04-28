@@ -11,7 +11,7 @@
             <div class="col-sm-4 col-sm-offset-4">
                 <form method="post">{% csrf_token %}
                     <h3 class="delete_post">Are you sure you want to delete "{{ post.title }}"? </h3>
-                    <input type="submit" value="Delete" class="btn btn-danger mt-2">
+                    <input type="submit" value="Delete" class="btn btn-danger mt-2" aria-label="Delete">
                 </form>
             </div>
             <div class="col"></div>

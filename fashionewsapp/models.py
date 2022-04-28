@@ -11,7 +11,9 @@ class Post(models.Model):
     """
     title = models.CharField(max_length=200, unique=True, blank=False)
     slug = models.SlugField(max_length=200, unique=True)
-    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="news_post")
+    author = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name="news_post"
+        )
     updated_on = models.DateTimeField(auto_now=True)
     content = models.TextField(blank=False)
     featured_image = CloudinaryField('image', default='news_image', blank=True)
@@ -42,7 +44,9 @@ class Comment(models.Model):
     """
     Comment Model
     """
-    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name="comments")
+    post = models.ForeignKey(
+        Post, on_delete=models.CASCADE, related_name="comments"
+        )
     name = models.CharField(max_length=80)
     body = models.TextField(max_length=120)
     date_published = models.DateTimeField(auto_now_add=True)
@@ -52,5 +56,3 @@ class Comment(models.Model):
 
     def __str__(self):
         return f"Comment {self.body} by {self.name}"
-
-

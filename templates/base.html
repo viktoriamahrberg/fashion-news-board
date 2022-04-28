@@ -34,7 +34,9 @@
 <!-- include summernote css/js -->
 <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+
 </head>
+
 <!-- Navbar -->
 
 <body>
@@ -52,19 +54,19 @@
           <!-- Create Post and Logout nav-links for when user is logged in -->
           {% if user.is_authenticated %}
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
+            <a class="nav-link" href="{% url 'account_logout' %}" aria-label="Logout">Logout</a>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'add_post' %}">Create Post</a>
+            <a class="nav-link" href="{% url 'add_post' %}" aria-label="Create Post">Create Post</a>
           </li>
           </li>
           {% else %}
 
           <!-- Register and Login nav-links for when user is logged out -->
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'account_signup' %}">Register</a>
+            <a class="nav-link" href="{% url 'account_signup' %}" aria-label="Register">Register</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'account_login' %}">Login</a>
+            <a class="nav-link" href="{% url 'account_login' %}" aria-label="Login">Login</a>
           </li>
           {% endif %}
         </ul>
@@ -95,10 +97,10 @@
   <!-- Footer -->
   <footer class="footer mt-5 py-4  bg-black text-center">
     <p class="text-center text-white">Connect with us on: </p>
-    <a href="#"><i class="fab fa-facebook-square ms-4"></i></a>
-    <a href="#"><i class="fab fa-twitter-square ms-4"></i></a>
-    <a href="#"><i class="fab fa-instagram-square ms-4"></i></a>
-    <a href="#"><i class="fab fa-youtube-round ms-4"></i></a>
+    <a href="#"><i class="fab fa-facebook-square ms-4" aria-label="Facebook"></i></a>
+    <a href="#"><i class="fab fa-twitter-square ms-4" aria-label="Twitter"></i></a>
+    <a href="#"><i class="fab fa-instagram-square ms-4" aria-label="Instagram"></i></a>
+    <a href="#"><i class="fab fa-youtube-square ms-4" aria-label="Youtube"></i></a>
   </footer>
 
 

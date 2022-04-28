@@ -17,7 +17,7 @@
                     {% csrf_token %}
                     {{ form.as_p }}
                     {{ content | safe }}
-                    <input type="submit" value="Save changes" class="btn btn-outline-success">
+                    <input type="submit" value="Save changes" class="btn btn-outline-success" aria-label="Save Changes">
                 </form>
             </div>
             <div class="col"></div>

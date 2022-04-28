@@ -18,7 +18,10 @@ class AddPostForm(forms.ModelForm):
     """
     class Meta:
         model = Post
-        fields = ('title', 'content', 'featured_image', 'excerpt', 'original_news_link', 'author')
+        fields = (
+            'title', 'content', 'featured_image', 'excerpt',
+            'original_news_link', 'author'
+            )
         widgets = {
             'title': forms.TextInput(attrs={
                 'class': 'form-control',
@@ -29,16 +32,14 @@ class AddPostForm(forms.ModelForm):
                 'class': 'form-control'
                 }),
             'excerpt': forms.TextInput(attrs={
-                'class': 'form-control',         
+                'class': 'form-control',
                 'placeholder': 'Required'
                 }),
             'original_news_link': forms.TextInput(attrs={
-                'class': 'form-control',         
+                'class': 'form-control',
                 'placeholder': 'Required'
                 }),
         }
-
-
 
 
 class EditPostForm(forms.ModelForm):
@@ -55,13 +56,11 @@ class EditPostForm(forms.ModelForm):
                 }),
             'content': SummernoteWidget(),
             'excerpt': forms.TextInput(attrs={
-                'class': 'form-control',         
+                'class': 'form-control',
                 'placeholder': 'Required'
                 }),
             'original_news_link': forms.TextInput(attrs={
-                'class': 'form-control',         
+                'class': 'form-control',
                 'placeholder': 'Required'
                 }),
         }
-
-

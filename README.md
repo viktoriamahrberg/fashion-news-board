@@ -109,7 +109,7 @@ Diagram was made in [DB diagram](https://dbdiagram.io/home) of the correlation b
 ![Diagram](/static/readme_images/fashionews_database.png)
 
 
-# Planning / Agile Development
+# Planning / Agile Management
 
 I used the Github kanban board to create issues and user stories in the early development stages of this project and moved them across the board as I progressed. 
 Link to [Github Project](https://github.com/viktoriamahrberg/fashion-news-board/projects/1)
@@ -160,20 +160,21 @@ I would consider these two as quite strong candidates for a good user experience
 
 # Testing
 
-## Functionality testing
-
 ## Code Validation
 
 [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) to validate CSS: Shows no errors
 [Html Checker](https://validator.w3.org/nu) to test HTML: Shows no errors
 [JSHint](https://jshint.com/) to test Javascript: Shows no errors
+[PEP8 Validator](http://pep8online.com/) to test all Python files: Shows no erros
+
+![PEP8 results](/static/readme_images/pep8_result.png)
 
 
 ## Performance testing
 
 I run Lighthouse tool to check performance of the website. 
 
-<!-- IMAGE -->
+![Lighthouse](/static/readme_images/lighthouse.png)
 
 
 ## Automated Testing
@@ -200,10 +201,9 @@ I run Lighthouse tool to check performance of the website.
 | User clicks on 'Original News Link' at bottom of post | New window opens and takes user to the original news article |  [x]
 | User clicks on FASHIONEWS logo | User is redirected to HOME page  |  [x]
 | Signed in user clicks on Create Post in nav-bar | User is being redirected to Create Post where user must fill out all fields or is being prompt to fill out all fields. When user save post they are being redirected to the newly created post |  [x]
-| Signed in user wants to comment to post | 'Leave a Comment' field is shown on full news-post page and signed in can leave a comment that is being published on the same page |  [x]
+| Signed in user wants to comment to post | 'Leave a Comment' field is shown on full news-post page and signed in can leave a comment that is being published on the same page. After a flash message is shown and automatically dismissed that the comment was posted. |  [x]
 | Logged user wants to comment to post | 'Leave a Comment' field is not showing |  [x]
 | Signed in user wants to comment to post | 'Leave a Comment' field is shown on full news-post page and signed in can leave a comment that is being published on the same page |  [x]
-
 
 
 ## User stories testing
