@@ -112,6 +112,7 @@ Diagram was made in [DB diagram](https://dbdiagram.io/home) of the correlation b
 # Planning / Agile Development
 
 I used the Github kanban board to create issues and user stories in the early development stages of this project and moved them across the board as I progressed. 
+Link to [Github Project](https://github.com/viktoriamahrberg/fashion-news-board/projects/1)
 
 
 ![Github kanban board](/static/readme_images/todo_board.png)
@@ -163,8 +164,10 @@ I would consider these two as quite strong candidates for a good user experience
 
 ## Code Validation
 
-[W3C CSS](https://jigsaw.w3.org/css-validator/) Validator to validate CSS
-[Html Checker](https://validator.w3.org/nu) to test HTML
+[W3C CSS Validator](https://jigsaw.w3.org/css-validator/) to validate CSS: Shows no errors
+[Html Checker](https://validator.w3.org/nu) to test HTML: Shows no errors
+[JSHint](https://jshint.com/) to test Javascript: Shows no errors
+
 
 ## Performance testing
 
@@ -173,12 +176,12 @@ I run Lighthouse tool to check performance of the website.
 <!-- IMAGE -->
 
 
+## Automated Testing
 
+- 'Title required' test in test_forms.py
+- 'Post-list-view as home page' test in test_views.py
 
-### Compatibility testing
-
-### User stories testing
-
+## Manual Testing
 
 | Test | Expected Output | Passed
 | ----------- | ----------- | ---- |
@@ -191,20 +194,49 @@ I run Lighthouse tool to check performance of the website.
 | User clicks on Edit button | Site redirects user to "Edit" page |  [x]
 | User loads the Edit page | Original content is prepopulated in the edit form, user can make edits and save changes and is then being taken back to the full news-post page |  [x]
 | User tries to leave fields in the Edit form empty | Form can not be submitted and user is being prompted to enter data |  [x]
-| User clicks on Delete button | Site redirects user to "Delete" page |  [x]
+| User clicks on Delete button | Site redirects user to 'Delete' page |  [x]
 | User loads the Delete page | User is being asked if they are sure they want to delete post, and if they proceed site redirects them to home-page and post is deleted. |  [x]
 | User clicks on 'Original News Link' at bottom of post | New window opens and takes user to the original news article |  [x]
 | User clicks on FASHIONEWS logo | User is redirected to HOME page  |  [x]
 | Signed in user clicks on Create Post in nav-bar | User is being redirected to Create Post where user must fill out all fields or is being prompt to fill out all fields. When user save post they are being redirected to the newly created post |  [x]
-| Signed in user wants to create a comment to post | Leave a Comment field is shown on full news-post page and signed in can leave a comment that is being published on the same page |  [x]
+| Signed in user wants to create a comment to post | 'Leave a Comment' field is shown on full news-post page and signed in can leave a comment that is being published on the same page |  [x]
 
 <!-- | Signed in user wants to create a DELETE A COMMENT to post | Leave a Comment field is shown on full news-post page and signed in can leave a comment that is being published on the same page |  [x] -->
 
 | User wants to Register | User is being prompt to fill in all fields if failing to do so as well as a long and uncommon password. Success message is shown below navbar |  [x]
 
 
-ADMIN STORIES TO ADD 
 
+
+## User stories testing
+
+### User
+
+- As a **user** I want to **register an account**
+    - When landing on the home-page user can click on "Register" in order to create an account. User needs to enter username, email (optional), password and reconfirm password. User is after this thrown a success-message of a successfull registration.
+- As a **user** I want to **see all available news on the frontpage** 
+    - All users can view all news-posts on home page and click for further reading.
+- As a **user** I want to **make posts**
+    - As a logged in user, user can create posts.
+- As a **user** I want to **add photos as well as text to my posts**
+    - As a logged in user "Create Post" is shown in navbar with a form to to create a post. The user has to provide a title, excerpt and content, original news-source link, and author. Images are optional and if not adding an image a default image will be provided.
+- As a **user** I want to **receive flash messages after my actions**
+    - Flash messages are shown to user when logging in, creating account, signing out of account and sucessfully commenting on a post. 
+    - Messages are shown above input fields if user fails to provide the right information when creating an account or logging in.
+- As a **user** I want to **see when the news post was posted**
+    - Date and time of posting is shown on post summary on homepage as well as detailed post view.
+- As a **user** I want to **click on a post**
+    - Posts on home page is clickable and will take user to a detailed news-post for further reading.
+- As a **user** I want to **see a link to the original post** 
+    - At the bottom of the detailed news-post a link to the original article is provided.
+- As a **user** I want to **comment on a news post** 
+    - As a logged-in user the Leave-a-Comment field is shown under each post and user can comment.
+
+
+### Admin
+
+- As a **site admin** I want to **delete inappropriate users or users who spread fake news** 
+    - In the back-end admin panel, admin can delete users, posts and comments.
 
 
 ### Issues found during site development
