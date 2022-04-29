@@ -31,6 +31,9 @@ class Post(models.Model):
         return self.title
 
     def save(self):
+        """
+        Creates a slug from title
+        """
         if not self.slug:
             self.slug = slugify(self.title)
 

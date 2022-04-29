@@ -5,7 +5,7 @@ Live link [here](https://fashionews.herokuapp.com/)
 # About
 
 Fashionews is a blog-like news page where anyone can share their local news from the fashion industry. May it be about a new fashion school with focus on sustainability and social justice in your city or the cool concept store in your home-town now expanding to another city, share it! 
-We can read about the big brands revenue and change of directors on a daily basis in the big newspapers - this is not about them -this is about supporting and sharing our local fashion-heros.
+We can read about the big brands revenue and change of directors on a daily basis in the big newspapers - this is not about them - this is about supporting and sharing our local fashion-heroes.
 
 
 # UX
@@ -22,16 +22,17 @@ Site owner should be able to control users, posts and comments in case of violat
 
 
 ## User Stories
-- As a Site user I want to make posts so that I can share fashion news around me with the community.
 - As a Site user I want to see all available news on the frontpage so that I can click decide on what I want to read more about.
 - As a Site user I want to click on a news-post so that I can read the full news article.
-- As a Site user I want to see a link to the original post so that I can see that the news is legit.
-- As a Site user I want to to see when the news-post was posted so that I know when the news was from.
-- As a Site user I want to search for a news-post so that I easily can navigate to a specific post.
 - As a Site user I want to register an account so that I can create a news-post, comment and interact with other posts.
 - As a Site user I want to receive flash messages after my actions so that I know if I successfully have processed my action.
+- As a Site user I want to make posts so that I can share fashion news around me with the community.
 - As a Site user I want to add photos as well as text to my posts in a userfriendly way so that I can make the posts more appealing with the images.
+- As a Site user I want to to see when the news-post was posted so that I know when the news was from.
+- As a Site user I want to see a link to the original post so that I can see that the news is legit.
+- As a Site user I want to search for a news-post so that I easily can navigate to a specific post.
 - As a Site admin I want to delete inappropriate users or users who spread fake news so that I keep the site legit and trustworthy.
+
 - As a Site user I want to choose what to read from a category list so that I can read that of what is in my interest.
 - As a Site user I want to share a post on social media so that I can interact with and spread the articles I find interesting.
 - As a Site user I want to login or register account with my Facebook or Google account so that I can speed up the login/register process.
@@ -46,15 +47,20 @@ I believe in peoples right and judgement to share fashion related news in an app
 Any user on the page can read the excerpt of the news and click on each post for further reading, but only signed in users can make a comment to the news-post. 
 
 Any *signed in* user can additionally:
-    - Comment on posts
-    - Create posts
-    - Edit posts
-    - Delete posts
 
-Full CRUD functionality is implemented for posting on the site.
+- Comment on posts
+
+- Create posts
+
+- Edit posts
+
+- Delete posts
+
+Full CRUD (Create, Read, Update, Delete) functionality is implemented for posting on the site.
 
 ## Wireframes
 
+The layout for this project is set after the blogpost layout which is what users know best how to interact with. A navbar and four blogposts following. On mobile devices the site is only showing one post followed by the rest vertically.
 I made the wireframes in Figma:
 
 **Home Page:**
@@ -73,7 +79,7 @@ I made the wireframes in Figma:
 
 ## Design
 
-I wanted to use a clear layout and color scheme for a serious news look and used Bootstrap as a toolkit with maincolors of black and white. 
+I wanted to use a clear layout and color scheme for a serious but fashionable news look and used Bootstrap as a toolkit with maincolors of black and white. 
 For the black text not to be so hard on the white background I used a greyish tone to black (fontcolor: #191919)
 To bring some life to the site a peachy-pink was used as accent color.
 Color palette was created in: [https://color.adobe.com](https://color.adobe.com/create/color-wheel)

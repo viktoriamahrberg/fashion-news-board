@@ -20,7 +20,7 @@ class AddPostForm(forms.ModelForm):
         model = Post
         fields = (
             'title', 'content', 'featured_image', 'excerpt',
-            'original_news_link', 'author'
+            'original_news_link'
             )
         widgets = {
             'title': forms.TextInput(attrs={

@@ -4,6 +4,7 @@ from django.urls import reverse_lazy
 from .models import Post
 from .forms import CommentForm, AddPostForm, EditPostForm
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 
 class PostList(generic.ListView):
@@ -60,13 +61,21 @@ class PostDetail(View):
         )
 
 
-class CreatePost(CreateView):
+class CreatePost(CreateView, LoginRequiredMixin):
     """
     View for creating posts on add_post.html
     """
     model = Post
     form_class = AddPostForm
     template_name = 'add_post.html'
+
+    def form_valid(self, form):
+        """
+        Automatically adds user as author to the post
+        """
+        form.instance.author = self.request.user
+        return super().form_valid(form)
+
 
 
 class EditPost(UpdateView):
