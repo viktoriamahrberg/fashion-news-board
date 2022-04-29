@@ -169,8 +169,11 @@ I would consider these two as quite strong candidates for a good user experience
 ## Code Validation
 
 [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) to validate CSS: Shows no errors
+
 [Html Checker](https://validator.w3.org/nu) to test HTML: Shows no errors
+
 [JSHint](https://jshint.com/) to test Javascript: Shows no errors
+
 [PEP8 Validator](http://pep8online.com/) to test all Python files: Shows no erros
 
 ![PEP8 results](/static/readme_images/pep8_result.png)
@@ -223,7 +226,7 @@ I run Lighthouse tool to check performance of the website.
 - As a **user** I want to **make posts**
     - As a logged in user, user can create posts.
 - As a **user** I want to **add photos as well as text to my posts**
-    - As a logged in user "Create Post" is shown in navbar with a form to to create a post. The user has to provide a title, excerpt and content, original news-source link, and author. Images are optional and if not adding an image a default image will be provided.
+    - As a logged in user "Create Post" is shown in navbar with a form to to create a post. The user has to provide a title, excerpt and content and original news-source link. Author is being automatically added as the logged in user. Images are optional and if not adding an image a default image will be provided.
 - As a **user** I want to **receive flash messages after my actions**
     - Flash messages are shown to user when logging in, creating account, signing out of account and sucessfully commenting on a post. 
     - Messages are shown above input fields if user fails to provide the right information when creating an account or logging in.
@@ -297,6 +300,9 @@ Heroku steps (after created account or logged in):
 7. Scroll down to Automatic and Manual Deploys sections. I clicked on Automatic Deployment so that my changes that I push to Github automatically updates in Heroku.
 8. Then in the Manual Deploy section, press Deploy Branch
 9. After project has been deployed successfully I clicked the View-button to see the program run in the terminal.
+
+After working on the site: DEBUG = False was changed in settings.py and COLLECTSTATIC value was removed from Config Vars in Heroku. 
+Manual deployment from Gitpod to Heroku is made with command: `git push heroku main` in CLI.
 
 
 ## Credits
